@@ -1,0 +1,29 @@
+{
+	"name": "password-generator-app",
+	"version": "1.0.0",
+	"description": "A basic password generator app in which you can generate a random password of a specific length, in which you have the option to include uppercase, symbols, and/or numbers characters, with ad additional feature click-to-copy.",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "npx tailwindcss -i ./src/input.css -o ./dist/style.css --watch"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/VinayNoogler000/Password-Generator.git"
+	},
+	"keywords": [
+		"vanilla-js",
+		"tailwind-css",
+		"password-generator"
+	],
+	"author": "Vinay Tambey",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/VinayNoogler000/Password-Generator/issues"
+	},
+	"homepage": "https://github.com/VinayNoogler000/Password-Generator#readme",
+	"dependencies": {
+		"@tailwindcss/cli": "^4.0.4",
+		"tailwindcss": "^4.0.4"
+	}
+}
