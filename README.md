@@ -37,7 +37,7 @@ These learnings contributed significantly to the robustness and user experience 
 
 Before cloning and running this project locally, ensure you have the following installed:
 
-- **Code Editor**: An editor like VSCode for making any modifications.
+- **Code Editor**: An editor like VSCode to efficiently view the code and for making any modifications.
 - **Git**: Version control system to clone the repository.
 - **Node.js**: Required for using npm packages.
 - **Web Browser**: A modern web browser like Chrome, Firefox, or Edge for locally running the web-app.
@@ -75,7 +75,6 @@ The project structure is organized as follows:
 
 ```
 FinTrack/
-├── assets/ # Contains images, icons, and other asset files.
 ├── dist/   # Contains distribution/build files for production.
 ├── src/    # Contains the main source files for the application.
 │   ├── index.html # The main HTML file for the application.
@@ -93,19 +92,18 @@ I would love to hear your feedback on this project! If you have suggestions for 
 
 ## 🐛 Found a Bug? Have a Feature Suggestion?
 
-If you find a bug or have a feature suggestion, please open an issue [here](https://github.com/VinayNoogler000/Password-Generator/issues) with a clear description and steps to reproduce. Your input means a lot to me, as it helps me grow and become a more powerful Software Developer Engineer.
+If you find a bug or have a feature suggestion, please open an issue [here](https://github.com/VinayNoogler000/Password-Generator/issues) with a clear description and steps to reproduce. 
+Your input means a lot to me, as it helps me grow and become a more powerful Software Developer Engineer.
 
 ## 🙏 Acknowledgments
 
 I would like to thank the following resources and tools that made this project possible:
 
-- [HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5) for providing the structure and content of the web page.
 - [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework used for styling the application.
-- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) for adding interactivity and functionality to the web application.
 - [Git](https://git-scm.com/) for version control.
 - [Node.js](https://nodejs.org/) for using npm packages.
 - [VSCode](https://code.visualstudio.com/) for being an excellent code editor.
-- [DoSomeCoding YT Channel](https://www.youtube.com/watch?v=fKhjFGBt4lc), the most important one, as [He](https://github.com/anshuopinion) gave me and other beginners the idea of building this Password-Generator web app, and also provided us with it's basic design. So, Thank you so much to, [Anshu bhaiya](https://www.linkedin.com/in/anshuopinion) again for giving me the idea and designs of multiple frontend project, to strengthen my fundamentals.
+- [DoSomeCoding YT Channel](https://www.youtube.com/watch?v=fKhjFGBt4lc), one of the most important one, as [He](https://github.com/anshuopinion) gave me and other beginners not only the idea of building this Password-Generator web app, but also it's basic design and tutorial (if you get stuck). So, Thank you so much to, [Anshu bhaiya](https://www.linkedin.com/in/anshuopinion) again for giving me the idea and designs of multiple frontend project, to strengthen my fundamentals.
 
 ## 💼 Careers
 
