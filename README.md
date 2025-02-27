@@ -74,7 +74,7 @@ To contribute to this project, follow these steps:
 The project structure is organized as follows:
 
 ```
-FinTrack/
+Password Generator/
 ├── dist/   # Contains distribution/build files for production.
 ├── src/    # Contains the main source files for the application.
 │   ├── index.html # The main HTML file for the application.
