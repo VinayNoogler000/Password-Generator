@@ -47,6 +47,7 @@ A secure and customizable password generator web application that allows users t
 
 Throughout the development of Password-Generator, several key learnings and insights were gained:
 
+1. In Tailwind-CSS, to reference CSS variables we can use this shorthand `bg-(--my-bg-color)`, instead of using `by-[var(--my-bg-color)]`, as Tailwind does the work of adding `var()` to the utility class.
 
 These learnings contributed significantly to the robustness and user experience of the Password-Generator application.
 
