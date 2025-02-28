@@ -48,6 +48,8 @@ A secure and customizable password generator web application that allows users t
 Throughout the development of Password-Generator, several key learnings and insights were gained:
 
 1. In Tailwind-CSS, to reference CSS variables we can use this shorthand `bg-(--my-bg-color)`, instead of using `by-[var(--my-bg-color)]`, as Tailwind does the work of adding `var()` to the utility class.
+2. When using Tailwind-CSS, it's always recommended to use `@layers` directive to maintain the correct specificity.
+3. In Tailwind-CSS, we should use `@apply` directive mostly in `@layer components`, and only when styling for those elements which are: small & reusable components, selected using parent child or descendent selectors, pseudo classes/elements, and elements which consists of dynamic/generated content.
 
 These learnings contributed significantly to the robustness and user experience of the Password-Generator application.
 
