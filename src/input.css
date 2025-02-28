@@ -7,4 +7,33 @@
         margin: 0;
         font-family: "Poppins", sans-serif;
     }
+
+    main {
+        height: 600px;
+        max-height: 600px;
+    }
+}
+
+@layer components {
+    form .pass-input {
+        @apply w-full p-3 bg-yellow-200 text-center text-red-700 font-extrabold text-2xl cursor-copy;
+    }
+
+    form .range-input {
+        @apply appearance-none cursor-grab;
+    }
+}
+
+@layer utilities {
+    .flex-row-center {
+        display: flex;
+        align-items: center; 
+        justify-content: center;
+    }
+
+    .flex-col-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+    }
 }

@@ -1,50 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="author" content="Vinay Tambey"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/assets/lock-favicon.png" type="image/x-icon">
-    <title>Password Generator App</title>
-    <link rel="stylesheet" href="/dist/style.css">
+	<meta charset="UTF-8" />
+	<meta name="author" content="Vinay Tambey" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" href="/assets/lock-favicon.png" type="image/x-icon" />
+	<title>Password Generator App</title>
+	<link rel="stylesheet" href="/dist/style.css" />
 </head>
 
-<body>
-    <main>
-        <h1> 
-            <svg class="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#ff0000" d="M144 144l0 48 160 0 0-48c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192l0-48C80 64.5 144.5 0 224 0s144 64.5 144 144l0 48 16 0c35.3 0 64 28.7 64 64l0 192c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 256c0-35.3 28.7-64 64-64l16 0z"/></svg>
-            Password Generator
-        </h1>
+<body class="h-screen bg-black flex-row-center">
+	<main class="bg-yellow-600 w-2xl max-w-2xl p-10 pb-0 flex-col-center gap-6 rounded-xl">
+		<h1 class="flex-row-center gap-4 text-4xl font-extrabold">
+			<svg class="w-7 max-w-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+				<!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+				<path fill="#ff0000" d="M144 144l0 48 160 0 0-48c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192l0-48C80 64.5 144.5 0 224 0s144 64.5 144 144l0 48 16 0c35.3 0 64 28.7 64 64l0 192c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 256c0-35.3 28.7-64 64-64l16 0z" />
+			</svg>
+			Password Generator
+		</h1>
 
-        <form>
-            <input id="password" type="text" placeholder="Your Password Will Appear Here!" disabled>
+		<form class="min-w-full min-h-full flex-col-center gap-6 ">
+			<input id="password" class="pass-input" type="text" placeholder="lkhsdvoi09user0" disabled />
 
-            <div class="pass-length-container">
-                <label for="p-length">Password Length <span id="password-length">8</span></label>
-                <input id="p-length" type="range" min="3" max="15" step="1">
-            </div>
+			<div class="flex-col-center gap-2">
+				<label for="p-length" class="text-2xl font-medium">Password Length <span id="password-length">8</span></label>
+				<input id="p-length" class="range-input" type="range" min="3" max="15" step="1"/>
+			</div>
 
-            <div class="pass-options-grp">
-                <div class="pass-options">
-                    <label for="uppercase-radio"> Include Uppercase Alphabets </label>
-                    <input id="uppercase-radio" type="checkbox">
-                </div>
+			<div class="pass-options-grp">
+				<div class="pass-options">
+					<label for="uppercase-radio"> Include Uppercase Alphabets </label>
+					<input id="uppercase-radio" type="checkbox" />
+				</div>
 
-                <div class="pass-options">
-                    <label for="numbers-radio"> Include Numbers </label>
-                    <input id="numbers-radio" type="checkbox">
-                </div>
+				<div class="pass-options">
+					<label for="numbers-radio"> Include Numbers </label>
+					<input id="numbers-radio" type="checkbox" />
+				</div>
 
-                <div class="pass-options">
-                    <label for="symbols-radio"> Include Sybmols </label>
-                    <input id="symbols-radio" type="checkbox">
-                </div>
-            </div>
-            
-            <button>Generate Password</button>
-        </form>
-    </main>
+				<div class="pass-options">
+					<label for="symbols-radio"> Include Sybmols </label>
+					<input id="symbols-radio" type="checkbox" />
+				</div>
+			</div>
 
-    <script src="./app.js"></script>
+			<button id="gen-pass-btn">Generate Password</button>
+		</form>
+	</main>
+
+	<script src="./app.js"></script>
 </body>
+
 </html>
