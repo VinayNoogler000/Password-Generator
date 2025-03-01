@@ -20,7 +20,25 @@
     }
 
     form .range-input {
-        @apply appearance-none cursor-grab;
+        @apply appearance-none cursor-grab mt-2 w-42 max-w-42;
+        transition: all 0.3s ease-in-out;
+    }
+
+    form .range-input:hover {
+        @apply scale-110;
+    }
+
+    form .range-input::-webkit-slider-runnable-track {
+        @apply bg-white h-1 border-1;
+    }
+
+    form .range-input::-webkit-slider-thumb {
+        @apply appearance-none bg-red-600 h-4 w-4 max-h-4 max-w-4 rotate-45 mt-[-7px] border-1;
+        transition: all 0.3s ease-in-out;
+    }
+
+    form .range-input:hover::-webkit-slider-thumb {
+        @apply rotate-230;
     }
 }
 
