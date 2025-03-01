@@ -19,6 +19,10 @@
         @apply w-full p-3 bg-yellow-200 text-center text-red-700 font-extrabold text-2xl cursor-copy;
     }
 
+    form .range-input {
+        @apply appearance-none cursor-grab mt-2 w-42 max-w-42;
+    }
+
     form .range-input:hover {
         @apply scale-110;
     }
