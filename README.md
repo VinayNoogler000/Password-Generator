@@ -50,6 +50,8 @@ Throughout the development of Password-Generator, several key learnings and insi
 1. In Tailwind-CSS, to reference CSS variables we can use this shorthand `bg-(--my-bg-color)`, instead of using `by-[var(--my-bg-color)]`, as Tailwind does the work of adding `var()` to the utility class.
 2. When using Tailwind-CSS, it's always recommended to use `@layers` directive to maintain the correct specificity.
 3. In Tailwind-CSS, we should use `@apply` directive mostly in `@layer components`, and only when styling for those elements which are: small & reusable components, selected using parent child or descendent selectors, pseudo classes/elements, and elements which consists of dynamic/generated content.
+4. Change the appearance (color, shape, and size) of the `input[type="range"]` element, by using Pseudo Elements and CSS (Tailwind's Utility Classes).
+5. Using Pseudo class and Pseudo element together to style the `slider-thumb` of the `input[type="range"]` element.
 
 These learnings contributed significantly to the robustness and user experience of the Password-Generator application.
 
