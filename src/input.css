@@ -1,60 +1,89 @@
 @import "tailwindcss";
 
-@layer base {
-    body, main, * {
-        padding: 0;
-        border: 0;
-        margin: 0;
-        font-family: "Poppins", sans-serif;
-    }
-
-    main {
-        height: 600px;
-        max-height: 600px;
-    }
+/* Base Styles: */
+body,
+main,
+* {
+    font-family: "Poppins", sans-serif;
 }
 
-@layer components {
-    form .pass-input {
-        @apply w-full p-3 bg-yellow-200 text-center text-red-700 font-extrabold text-2xl cursor-copy;
-    }
-
-    form .range-input {
-        @apply appearance-none cursor-grab mt-2 w-42 max-w-42;
-    }
-
-    form .range-input:hover {
-        @apply scale-110;
-    }
-
-    form .range-input::-webkit-slider-runnable-track {
-        @apply bg-white h-1 border-1;
-    }
-
-    form .range-input::-webkit-slider-thumb {
-        @apply appearance-none bg-red-600 h-4 w-4 max-h-4 max-w-4 rotate-45 mt-[-7px] border-1;
-        transition: all 0.3s ease-in-out;
-    }
-
-    form .range-input:hover::-webkit-slider-thumb {
-        @apply rotate-230;
-    }
+main {
+    height: 600px;
+    max-height: 600px;
 }
 
-@layer utilities {
-    .flex-row-center {
-        display: flex;
-        align-items: center; 
-        justify-content: center;
-    }
+/* Component Styles: */
+form .pass-input {
+    @apply w-full p-3 bg-yellow-200 text-center text-red-700 font-extrabold text-2xl cursor-copy rounded-md smooth-transition;
+    
+    @apply hover:hover-effects; /* hover state styling */
+}
 
-    .flex-col-center {
-        display: flex;
-        flex-direction: column;
-        align-items: center; 
-    }
+form .range-input {
+    @apply appearance-none cursor-grab mt-2 w-42 max-w-42 smooth-transition;
+}
 
-    .smooth-transition {
-        transition: all 0.3s ease-in-out;
-    }
+form .range-input:hover {
+    @apply scale-110;
+}
+
+form .range-input::-webkit-slider-runnable-track {
+    @apply bg-white h-1 border-1;
+}
+
+form .range-input::-webkit-slider-thumb {
+    @apply appearance-none bg-red-600 h-4 w-4 max-h-4 max-w-4 rotate-45 mt-[-7px] border-1 smooth-transition;
+}
+
+form .range-input:hover::-webkit-slider-thumb {
+    @apply rotate-230;
+}
+
+form .pass-options {
+    @apply w-full flex-row-center gap-4 justify-between smooth-transition;
+}
+
+.pass-options label {
+    @apply text-xl cursor-pointer smooth-transition;
+}
+
+.pass-options input[type="checkbox"] {
+    @apply appearance-none w-4 h-4 bg-white border-1 rounded-xs cursor-pointer smooth-transition;
+    
+    @apply checked:bg-red-600 checked:border-red-600; /* checked state styling */
+    
+    @apply hover:border-red-600;  /* hover state styling */
+}   
+
+.pass-options input[type="checkbox"]:checked {
+    background-image: url("/assets/check-icon.svg");
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.pass-options:hover label, form .pass-options:hover input[type="checkbox"] {
+    @apply hover-effects;
+}
+
+/* Custom Utility Classes */
+@utility flex-row-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@utility flex-col-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@utility smooth-transition {
+    transition: all 0.3s ease-in-out;
+}
+
+@utility hover-effects {
+    transform: scale(1.075);
+    opacity: 100;
 }
