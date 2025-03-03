@@ -55,6 +55,8 @@ Throughout the development of Password-Generator, several key learnings and insi
 6. In Tailwind-CSS V4, use `@utility` directive for reusable, single-purpose utilities, instead of defining them `@layer utilities`.
 7. Skip `@layer` directive for component-specific styles, in Tailwind-CSS V4. 
 8. Keep base styles minimal (even without `@layer base`) since 'Preflight' handles most resets, in Tailwind-CSS V4.
+9. Modifying the appearance (size, shape and color) of the `input [type="checkbox"]` element, by using CSS.
+
 
 
 These learnings contributed significantly to the robustness and user experience of the Password-Generator application.
