@@ -52,6 +52,10 @@ Throughout the development of Password-Generator, several key learnings and insi
 3. In Tailwind-CSS, we should use `@apply` directive mostly in `@layer components`, and only when styling for those elements which are: small & reusable components, selected using parent child or descendent selectors, pseudo classes/elements, and elements which consists of dynamic/generated content.
 4. Change the appearance (color, shape, and size) of the `input[type="range"]` element, by using Pseudo Elements and CSS (Tailwind's Utility Classes).
 5. Using Pseudo class and Pseudo element together to style the `slider-thumb` of the `input[type="range"]` element.
+6. In Tailwind-CSS V4, use `@utility` directive for reusable, single-purpose utilities, instead of defining them `@layer utilities`.
+7. Skip `@layer` directive for component-specific styles, in Tailwind-CSS V4. 
+8. Keep base styles minimal (even without `@layer base`) since 'Preflight' handles most resets, in Tailwind-CSS V4.
+
 
 These learnings contributed significantly to the robustness and user experience of the Password-Generator application.
 
