@@ -1,6 +1,11 @@
 @import "tailwindcss";
 
 /* Base Styles: */
+:root {
+    --primary-color: #ffba0a;
+    --primary-xtra-light: #fae6b3;
+    --primary-light: #ffde89;
+}
 body,
 main,
 * {
@@ -10,11 +15,12 @@ main,
 main {
     height: 600px;
     max-height: 600px;
+    background: linear-gradient(178.63deg, var(--primary-color), rgba(230, 191, 92, 0) 140.92%);
 }
 
 /* Component Styles: */
 form .pass-input {
-    @apply w-full p-3 bg-yellow-200 text-center text-red-700 font-extrabold text-2xl cursor-copy rounded-md smooth-transition;
+    @apply w-full p-3 bg-(--primary-xtra-light) text-center text-red-700 font-extrabold text-2xl cursor-copy rounded-md smooth-transition;
     
     @apply hover:hover-effects; /* hover state styling */
 }
@@ -44,26 +50,24 @@ form .pass-options {
 }
 
 .pass-options label {
-    @apply text-xl cursor-pointer smooth-transition;
+    @apply text-xl cursor-pointer smooth-transition hover-effects;
 }
 
 .pass-options input[type="checkbox"] {
-    @apply appearance-none w-4 h-4 bg-white border-1 rounded-xs cursor-pointer smooth-transition;
-    
-    @apply checked:bg-red-600 checked:border-red-600; /* checked state styling */
-    
-    @apply hover:border-red-600;  /* hover state styling */
-}   
-
-.pass-options input[type="checkbox"]:checked {
-    background-image: url("/assets/check-icon.svg");
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
+    accent-color: red;
+    @apply w-4 h-4 rounded-xs cursor-pointer smooth-transition hover-effects;
 }
 
-.pass-options:hover label, form .pass-options:hover input[type="checkbox"] {
-    @apply hover-effects;
+.pass-options:hover label {
+    @apply scale-105;
+}
+
+.pass-options:hover input[type="checkbox"] {
+    @apply scale-115;
+}
+
+#gen-pass-btn:active {
+    @apply duration-100 text-white;
 }
 
 /* Custom Utility Classes */
