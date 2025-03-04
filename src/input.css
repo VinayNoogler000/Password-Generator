@@ -50,20 +50,20 @@ form .pass-options {
 }
 
 .pass-options label {
-    @apply text-xl cursor-pointer smooth-transition hover-effects;
+    @apply text-xl cursor-pointer smooth-transition;
 }
 
 .pass-options input[type="checkbox"] {
     accent-color: red;
-    @apply w-4 h-4 rounded-xs cursor-pointer smooth-transition hover-effects;
+    @apply w-4 h-4 rounded-xs cursor-pointer smooth-transition;
 }
 
 .pass-options:hover label {
-    @apply scale-105;
+    @apply hover-effects;
 }
 
 .pass-options:hover input[type="checkbox"] {
-    @apply scale-115;
+    @apply hover-effects scale-110;
 }
 
 #gen-pass-btn:active {
