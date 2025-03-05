@@ -20,17 +20,17 @@
 			Password Generator
 		</h1>
 
-		<form class="min-w-full h-full max-h-full flex-col-center gap-6 ">
+		<form class="min-w-full h-fit max-h-full flex-col-center gap-6 ">
 			<abbr title="Copy Password" class="w-full p-3">
 				<input id="password" class="pass-input" type="text" placeholder="Your Password will Display here..." disabled />
 			</abbr>
 
 			<div class="flex-col-center gap-2">
-				<label for="p-length" class="text-2xl font-medium">Password Length <span id="password-length">8</span></label>
+				<label for="p-length" class="text-2xl font-medium max-[470px]:text-[1.35rem]">Password Length <span id="password-length">8</span></label>
 				<input id="p-length" class="range-input" type="range" min="3" max="15" step="1"/>
 			</div>
 
-			<div class="w-full flex-col-center gap-1 mt-2">
+			<div class="pass-options-grp">
 				<div class="pass-options">
 					<label for="uppercase-radio"> Include Uppercase Alphabets </label>
 					<input id="uppercase-radio" type="checkbox" />
@@ -48,7 +48,7 @@
 			</div>
 		</form>
 
-		<button id="gen-pass-btn" class="w-full bg-(--primary-color) p-4 cursor-pointer text-3xl absolute bottom-0 opacity-90 smooth-transition hover:hover-effects">Generate Password</button>
+		<button id="gen-pass-btn" class="w-full bg-(--color-primary) p-4 cursor-pointer text-3xl absolute bottom-0 opacity-90 smooth-transition hover:hover-effects">Generate Password</button>
 	</main>
 
 	<script src="./app.js"></script>
