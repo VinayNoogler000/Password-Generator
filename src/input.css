@@ -1,10 +1,9 @@
 @import "tailwindcss";
 
-/* Base Styles: */
+/* *********************************** Base Styles ************************************ */
 :root {
-    --primary-color: #ffba0a;
-    --primary-xtra-light: #fae6b3;
-    --primary-light: #ffde89;
+    --color-primary: #ffba0a;
+    --color-primary-xtra-light: #fae6b3;
 }
 body,
 main,
@@ -15,12 +14,12 @@ main,
 main {
     height: 600px;
     max-height: 600px;
-    background: linear-gradient(178.63deg, var(--primary-color), rgba(230, 191, 92, 0) 140.92%);
+    background: linear-gradient(178.63deg, var(--color-primary), rgba(230, 191, 92, 0) 140.92%);
 }
 
-/* Component Styles: */
+/* ********************************* Component Styles ********************************* */
 form .pass-input {
-    @apply w-full p-3 bg-(--primary-xtra-light) text-center text-red-700 font-extrabold text-2xl cursor-copy rounded-md smooth-transition;
+    @apply w-full p-3 bg-(--color-primary-xtra-light) text-center text-red-700 font-extrabold text-2xl cursor-copy rounded-md smooth-transition;
     
     @apply hover:hover-effects; /* hover state styling */
 }
@@ -43,6 +42,10 @@ form .range-input::-webkit-slider-thumb {
 
 form .range-input:hover::-webkit-slider-thumb {
     @apply rotate-230;
+}
+
+form .pass-options-grp {
+    @apply w-full max-w-[80%] flex-col-center gap-1 mt-2;
 }
 
 form .pass-options {
@@ -70,7 +73,117 @@ form .pass-options {
     @apply duration-100 text-white;
 }
 
-/* Custom Utility Classes */
+/* ********************************* Responsive Styling ********************************* */
+@media (max-width: 800px) {
+    html {
+        font-size: 85%;
+    }
+
+    main {
+        height: 45%;
+    }
+}
+
+@media (max-width: 700px) {
+    html {
+        font-size: 75%;
+    }
+
+    main {
+        height: 40%;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 1.8rem;
+        gap: 1rem;
+    }
+
+    form {
+        margin-top: 0rem;
+        gap: 1rem;
+    }
+
+    form .range-input::-webkit-slider-thumb {
+        margin-top: -5px;
+    }
+
+    form div:nth-of-type(1) {
+        gap: 0.25rem;
+    }
+
+    form .pass-options-grp {
+        margin-top: 1rem;
+        max-width: 60%;
+    }
+}
+
+@media (max-width: 550px) {
+    main {
+        margin: auto 2.5rem;
+    }
+}
+
+@media (max-width: 470px) {
+    main {
+        height: 35%;
+    }
+    
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    form .pass-input {
+        padding: 0.5rem;
+    }
+
+    .pass-input::placeholder {
+        font-size: 1.35rem;
+    }
+
+    form .pass-options-grp {
+        max-width: 80%;
+    }
+
+    .pass-options label {
+        font-size: 1.15rem;
+    }
+
+    #gen-pass-btn {
+        font-size: 1.5rem;
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 430px) {
+    main {
+        gap: 0.75rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        gap: 0.75rem;
+    }
+
+    .pass-input::placeholder {
+        font-size: 1rem;
+    }
+
+    form .pass-options-grp {
+        max-width: 80%;
+    }
+
+    #gen-pass-btn {
+        font-size: 1.5rem;
+        padding: 0.75rem;
+    }
+}
+
+/* ******************************* Custom Utility Classes ******************************* */
 @utility flex-row-center {
     display: flex;
     align-items: center;
