@@ -56,7 +56,7 @@ Throughout the development of Password-Generator, several key learnings and insi
 7. Skip `@layer` directive for component-specific styles, in Tailwind-CSS V4. 
 8. Keep base styles minimal (even without `@layer base`) since 'Preflight' handles most resets, in Tailwind-CSS V4.
 9. Modifying the appearance (size, shape and color) of the `input [type="checkbox"]` element, by using CSS.
-10. `inset` CSS property which, in modern-css, is used as a shorthand for `top`, `bottom`, `left` and `right` CSS properties. For eg: `inset: 10px` will be equivalent to `top, bottom, left, right: 10px` CSS properties.
+10. The `inset` CSS property which, in modern-css, is used as a shorthand for `top`, `bottom`, `left` and `right` CSS properties. For eg: `inset: 10px` will be equivalent to `top, bottom, left, right: 10px` CSS properties.
 
 
 These learnings contributed significantly to the robustness and user experience of the Password-Generator application.
