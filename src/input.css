@@ -91,6 +91,12 @@
     main {
         height: 45%;
     }
+
+    form .range-input { 
+        &::-webkit-slider-thumb {
+            @apply mt-[-6px];
+        }
+    }
 }
 
 @media (max-width: 700px) {
@@ -100,6 +106,12 @@
 
     main {
         height: 40%;
+    }
+
+    form .range-input { 
+        &::-webkit-slider-thumb {
+            @apply mt-[-5.5px];
+        }
     }
 }
 
