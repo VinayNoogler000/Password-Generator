@@ -1,76 +1,84 @@
 @import "tailwindcss";
 
 /* *********************************** Base Styles ************************************ */
-:root {
-    --color-primary: #ffba0a;
-    --color-primary-xtra-light: #fae6b3;
-}
-body,
-main,
-* {
-    font-family: "Poppins", sans-serif;
-}
-
-main {
-    height: 600px;
-    max-height: 600px;
-    background: linear-gradient(178.63deg, var(--color-primary), rgba(230, 191, 92, 0) 140.92%);
+@layer base {
+    :root {
+        --color-primary: #ffba0a;
+        --color-primary-xtra-light: #fae6b3;
+    }
+    
+    body, main, * {
+        font-family: "Poppins", sans-serif;
+    }
+    
+    main {
+        height: 600px;
+        max-height: 600px;
+        background: linear-gradient(178.63deg, var(--color-primary), rgba(230, 191, 92, 0) 140.92%);
+    }
 }
 
 /* ********************************* Component Styles ********************************* */
-form .pass-input {
-    @apply w-full p-3 bg-(--color-primary-xtra-light) text-center text-red-700 font-extrabold text-2xl cursor-copy rounded-md smooth-transition;
+@layer components {
+    form .pass-input {
+        @apply w-full p-3 bg-(--color-primary-xtra-light) text-center text-red-700 font-extrabold text-2xl cursor-copy rounded-md smooth-transition;
+        @apply hover:hover-effects; /* hover state styling */
+    }
     
-    @apply hover:hover-effects; /* hover state styling */
-}
-
-form .range-input {
-    @apply appearance-none cursor-grab mt-2 w-42 max-w-42 smooth-transition;
-}
-
-form .range-input:hover {
-    @apply scale-110;
-}
-
-form .range-input::-webkit-slider-runnable-track {
-    @apply bg-white h-1 border-1;
-}
-
-form .range-input::-webkit-slider-thumb {
-    @apply appearance-none bg-red-600 h-4 w-4 max-h-4 max-w-4 rotate-45 mt-[-7px] border-1 smooth-transition;
-}
-
-form .range-input:hover::-webkit-slider-thumb {
-    @apply rotate-230;
-}
-
-form .pass-options-grp {
-    @apply w-full max-w-[80%] flex-col-center gap-1 mt-2;
-}
-
-form .pass-options {
-    @apply w-full flex-row-center gap-4 justify-between smooth-transition;
-}
-
-.pass-options label {
-    @apply text-xl cursor-pointer smooth-transition;
-}
-
-.pass-options input[type="checkbox"] {
-    accent-color: red;
-    @apply w-4 h-4 rounded-xs cursor-pointer smooth-transition;
-}
-
-.pass-options:hover label {
-    @apply hover-effects;
-}
-
-.pass-options:hover input[type="checkbox"] {
-    @apply hover-effects scale-110;
-}
-
-#gen-pass-btn:active {
-    @apply duration-100 text-white;
+    form .range-input {
+        @apply appearance-none cursor-grab mt-2 w-42 max-w-42 smooth-transition;
+    }
+    
+    form .range-input:hover {
+        @apply scale-110;
+    }
+    
+    form .range-input {
+        &::-webkit-slider-runnable-track {
+            @apply bg-white h-1 border-1;
+        }
+    }
+    
+    form .range-input { 
+        &::-webkit-slider-thumb {
+            @apply appearance-none bg-red-600 h-4 w-4 max-h-4 max-w-4 rotate-45 mt-[-7px] border-1 smooth-transition;
+        }
+    }
+    
+    form .range-input:hover {
+        &::-webkit-slider-thumb {
+            @apply rotate-230;
+        }
+    }
+    
+    form .pass-options-grp {
+        @apply w-full max-w-[80%] flex-col-center gap-1 mt-2;
+    }
+    
+    form .pass-options {
+        @apply w-full flex-row-center gap-4 justify-between smooth-transition;
+    }
+    
+    .pass-options label {
+        @apply text-xl cursor-pointer smooth-transition;
+    }
+    
+    .pass-options input[type="checkbox"] {
+        accent-color: red;
+        @apply w-4 h-4 rounded-xs cursor-pointer smooth-transition;
+    }
+    
+    .pass-options:hover label {
+        @apply hover-effects;
+    }
+    
+    .pass-options:hover input[type="checkbox"] {
+        @apply hover-effects scale-110;
+    }
+    
+    #gen-pass-btn:active {
+        @apply duration-100 text-white;
+    }
 }
 
 /* ********************************* Responsive Styling ********************************* */
@@ -95,92 +103,92 @@ form .pass-options {
 }
 
 @media (max-width: 600px) {
-    main {
-        padding: 1.8rem;
-        gap: 1rem;
-    }
-
-    form {
-        margin-top: 0rem;
-        gap: 1rem;
-    }
-
-    form .range-input::-webkit-slider-thumb {
-        margin-top: -5px;
-    }
-
-    form div:nth-of-type(1) {
-        gap: 0.25rem;
-    }
-
-    form .pass-options-grp {
-        margin-top: 1rem;
-        max-width: 60%;
-    }
+            main {
+                padding: 1.8rem;
+                gap: 1rem;
+            }
+    
+            form {
+                margin-top: 0rem;
+                gap: 1rem;
+            }
+    
+            form .range-input::-webkit-slider-thumb {
+                margin-top: -5px;
+            }
+    
+            form div:nth-of-type(1) {
+                gap: 0.25rem;
+            }
+    
+            form .pass-options-grp {
+                margin-top: 1rem;
+                max-width: 60%;
+            }
 }
-
+    
 @media (max-width: 550px) {
-    main {
-        margin: auto 2.5rem;
-    }
+            main {
+                margin: auto 2.5rem;
+            }
 }
-
+    
 @media (max-width: 470px) {
-    main {
-        height: 35%;
-    }
+            main {
+                height: 35%;
+            }
     
-    h1 {
-        font-size: 1.75rem;
-    }
+            h1 {
+                font-size: 1.75rem;
+            }
     
-    form .pass-input {
-        padding: 0.5rem;
-    }
-
-    .pass-input::placeholder {
-        font-size: 1.35rem;
-    }
-
-    form .pass-options-grp {
-        max-width: 80%;
-    }
-
-    .pass-options label {
-        font-size: 1.15rem;
-    }
-
-    #gen-pass-btn {
-        font-size: 1.5rem;
-        padding: 0.75rem;
-    }
+            form .pass-input {
+                padding: 0.5rem;
+            }
+    
+            .pass-input::placeholder {
+                font-size: 1.35rem;
+            }
+    
+            form .pass-options-grp {
+                max-width: 80%;
+            }
+    
+            .pass-options label {
+                font-size: 1.15rem;
+            }
+    
+            #gen-pass-btn {
+                font-size: 1.5rem;
+                padding: 0.75rem;
+            }
 }
-
-@media (max-width: 430px) {
-    main {
-        gap: 0.75rem;
-    }
     
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    form {
-        gap: 0.75rem;
-    }
-
-    .pass-input::placeholder {
-        font-size: 1rem;
-    }
-
-    form .pass-options-grp {
-        max-width: 80%;
-    }
-
-    #gen-pass-btn {
-        font-size: 1.5rem;
-        padding: 0.75rem;
-    }
+@media (max-width: 430px) {
+            main {
+                gap: 0.75rem;
+            }
+    
+            h1 {
+                font-size: 1.5rem;
+            }
+    
+            form {
+                gap: 0.75rem;
+            }
+    
+            .pass-input::placeholder {
+                font-size: 1rem;
+            }
+    
+            form .pass-options-grp {
+                max-width: 80%;
+            }
+    
+            #gen-pass-btn {
+                font-size: 1.5rem;
+                padding: 0.75rem;
+            }
 }
 
 /* ******************************* Custom Utility Classes ******************************* */
