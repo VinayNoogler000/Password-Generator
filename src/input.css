@@ -22,8 +22,9 @@
 /* ********************************* Component Styles ********************************* */
 @layer components {
     form .pass-input {
-        @apply w-full p-3 bg-(--color-primary-xtra-light) text-center text-red-700 font-extrabold text-2xl cursor-copy rounded-md smooth-transition;
+        @apply w-full p-3 bg-(--color-primary-xtra-light) text-center text-red-700 font-extrabold text-2xl cursor-copy rounded-md smooth-transition outline-none;
         @apply hover:hover-effects; /* hover state styling */
+        caret-color: transparent; /* hide the blinking cursor (caret) */
     }
     
     form .range-input {
