@@ -56,7 +56,54 @@ window.addEventListener("DOMContentLoaded", () => {
     
         // Loop to "password.length" times to add random lowercase, uppercase, numerical and symbolic characters to "password[]"
         for (let i = 0; i < passwordLength; i++) {
-            password.push( getRandomLowercaseAlphabet() );
+            let typeOfChar = Math.round(Math.random()); // randomly decide the type of character to be added in the "password[]"
+           
+            if (includeUppercaseChars && includeNums && includeSymbols) {
+                typeOfChar = Math.floor(Math.random() * 4) + 1;
+                
+                if(typeOfChar === 1) {
+                    password.push( getRandomLowercaseAlphabet() );
+                }
+                else if(typeOfChar === 2) {
+                    password.push( getRandomUppercaseAlphabet() );
+                }
+                else if(typeOfChar === 3) {
+                    password.push( getRandomNumChar() );
+                }
+                else {
+                    password.push( getRandomSymbol() );
+                }
+            }
+            else if (includeUppercaseChars && includeNums) {
+                typeOfChar = Math.floor(Math.random() * 3) + 1;
+
+                password.push( typeOfChar === 1 ? getRandomLowercaseAlphabet() : 
+                typeOfChar === 2 ? getRandomUppercaseAlphabet() : getRandomNumChar() );
+            }
+            else if (includeUppercaseChars && includeSymbols ) {
+                typeOfChar = Math.floor(Math.random() * 3) + 1;
+
+                password.push( typeOfChar === 1 ? getRandomLowercaseAlphabet() : 
+                typeOfChar === 2 ? getRandomUppercaseAlphabet() : getRandomSymbol() );
+            }
+            else if (includeNums && includeSymbols ) {
+                typeOfChar = Math.floor(Math.random() * 3) + 1;
+
+                password.push( typeOfChar === 1 ? getRandomLowercaseAlphabet() : 
+                typeOfChar === 2 ? getRandomNumChar() : getRandomSymbol() );
+            }
+            else if ( includeUppercaseChars ) {
+                password.push( typeOfChar ? getRandomLowercaseAlphabet() : getRandomUppercaseAlphabet() );
+            }
+            else if (includeNums) {
+                password.push( typeOfChar ? getRandomLowercaseAlphabet() : getRandomNumChar() );
+            }
+            else if (includeSymbols){
+                password.push( typeOfChar ? getRandomLowercaseAlphabet() : getRandomSymbol() );
+            }
+            else {    
+                password.push( getRandomLowercaseAlphabet() );
+            }
         }
 
         // Display password on the webpage:
@@ -83,7 +130,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     // Set the Password length to a default value:
-    passLengthInpEl.value =  passLengthDisplayEl.textContent = 9;
+    passLengthInpEl.value =  passLengthDisplayEl.textContent = 10;
 
     // Display password length on webpage, when user changes it, by using range-input element:
     passLengthInpEl.addEventListener("input", () => passLengthDisplayEl.textContent = passLengthInpEl.value);
