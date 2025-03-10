@@ -82,17 +82,16 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Initialize Password length:
+    // Set the Password length to a default value:
     passLengthInpEl.value =  passLengthDisplayEl.textContent = 9;
 
     // Display password length on webpage, when user changes it, by using range-input element:
-    passLengthInpEl.addEventListener("input", () => {
-        passLengthDisplayEl.textContent = passLengthInpEl.value;
-    });
+    passLengthInpEl.addEventListener("input", () => passLengthDisplayEl.textContent = passLengthInpEl.value);
 
     // Generate Password on clicking "genPassBtnEl":
-    genPassBtnEl.addEventListener("click", () => {
-        generatePassword();
-    });
+    genPassBtnEl.addEventListener("click", generatePassword);
+
+    // Copy the password the Clipboard on clicking "passDisplayEl":
+    passDisplayEl.addEventListener("click", copyPasswordToClipboard);
 });
 
