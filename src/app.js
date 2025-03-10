@@ -16,6 +16,9 @@ window.addEventListener("DOMContentLoaded", () => {
     const NUMERICAL_CHARACTERS = '0123456789'.split('');
     const SYMBOL_CHARACTERS = '!@#$%^&*()_+-=?.'.split('');
 
+    // Create a tracker variable which can be used to allow (or not allow) user to copy password:
+    let canCopyPass = false;  
+
     // Auxillary function to get a random lowercase alphabet, ranging a-z:
     const getRandomLowercaseAlphabet = () => {
         let i = Math.floor(Math.random() * LOWERCASE_ALPHABETS.length);
@@ -58,6 +61,25 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // Display password on the webpage:
         passDisplayEl.value = password.join('');
+
+        // Allow user to copy the password:
+        canCopyPass = true;
+    }
+
+    // Function to copy the password to clipboard:
+    const copyPasswordToClipboard = async () => {
+        let password = passDisplayEl.value;
+
+        if(!password || !canCopyPass) return;
+
+        try {
+            await navigator.clipboard.writeText(password);
+            alert("Password Copied to Clipboard!");
+        }
+        catch(err) {
+            console.log(err);
+            alert("Failed to Copy Password. Please, try again later!");
+        }
     }
 
     // Initialize Password length:
