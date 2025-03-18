@@ -16,6 +16,20 @@ window.addEventListener("DOMContentLoaded", () => {
     const NUMERICAL_CHARACTERS = '0123456789'.split('');
     const SYMBOL_CHARACTERS = '!@#$%^&*()_+-=?.'.split('');
 
+    // Class to Create Toast Objects:
+    class Toast {
+        constructor(message, bgColor) {
+            this.text = message;
+            this.position = "center",
+            this.stopOnFocus = false,
+            this.style = {
+                textAlign: "center",
+                background: bgColor === "green" ? "linear-gradient(to right, #00b09b, #96c93d)" : bgColor === "red" ? "linear-gradient(to right, #e33217, #ff001e)" : "linear-gradient(to right, #ADD8E6, #008080)",
+                cursor: "default",
+            }
+        }
+    }
+
     // Auxillary function to get a random lowercase alphabet, ranging a-z:
     const getRandomLowercaseAlphabet = () => getRandomChar(LOWERCASE_ALPHABETS);
 
@@ -80,12 +94,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
         try {
             await navigator.clipboard.writeText(password);
-            alert("Password Copied to Clipboard!");
         }
         catch(err) {
             console.log(err);
-            alert("Failed to Copy Password. Please, try again later!");
+            Toastify( new Toast("Oh No!!!😥 Failed to Copy Password.🙂\nPlease, try again later", "red") ).showToast();
         }
+
+        Toastify( new Toast("🤩Password Copied! Enjoy!✌️", "blue") ).showToast();
     }
 
     // Set the Password length to a default value:
@@ -97,6 +112,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // Generate Password on clicking "genPassBtnEl":
     genPassBtnEl.addEventListener("click", () => {
         generatePassword();
+        Toastify( new Toast("🎉Hurrah! Password Generated Sucessfully!🥳\nClick to Copy it!👇", "green") ).showToast();
     });
 
     // Copy the password the Clipboard on clicking "passDisplayEl":
