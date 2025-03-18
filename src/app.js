@@ -43,6 +43,11 @@ window.addEventListener("DOMContentLoaded", () => {
         return SYMBOL_CHARACTERS[i];
     }
 
+    // Auxillary function to generate a random positive integer, upto a given num:
+    const getRandomPositveInteger = (maxNum) => {
+        return Math.floor(Math.random() * maxNum) + 1;
+    }
+
     // Function to generate password:
     const generatePassword = () => {
         // Define variables:
@@ -59,7 +64,7 @@ window.addEventListener("DOMContentLoaded", () => {
             let typeOfChar = Math.round(Math.random()); // randomly decide the type of character to be added in the "password[]"
            
             if (includeUppercaseChars && includeNums && includeSymbols) {
-                typeOfChar = Math.floor(Math.random() * 4) + 1;
+                typeOfChar = getRandomPositveInteger(4);
                 
                 if(typeOfChar === 1) {
                     password.push( getRandomLowercaseAlphabet() );
@@ -75,19 +80,19 @@ window.addEventListener("DOMContentLoaded", () => {
                 }
             }
             else if (includeUppercaseChars && includeNums) {
-                typeOfChar = Math.floor(Math.random() * 3) + 1;
+                typeOfChar = getRandomPositveInteger(3);
 
                 password.push( typeOfChar === 1 ? getRandomLowercaseAlphabet() : 
                 typeOfChar === 2 ? getRandomUppercaseAlphabet() : getRandomNumChar() );
             }
             else if (includeUppercaseChars && includeSymbols ) {
-                typeOfChar = Math.floor(Math.random() * 3) + 1;
+                typeOfChar = getRandomPositveInteger(3);
 
                 password.push( typeOfChar === 1 ? getRandomLowercaseAlphabet() : 
                 typeOfChar === 2 ? getRandomUppercaseAlphabet() : getRandomSymbol() );
             }
             else if (includeNums && includeSymbols ) {
-                typeOfChar = Math.floor(Math.random() * 3) + 1;
+                typeOfChar = getRandomPositveInteger(3);
 
                 password.push( typeOfChar === 1 ? getRandomLowercaseAlphabet() : 
                 typeOfChar === 2 ? getRandomNumChar() : getRandomSymbol() );
