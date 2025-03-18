@@ -59,7 +59,7 @@ Throughout the development of Password-Generator, several key learnings and insi
 10. The `inset` CSS property which, in modern-css, is used as a shorthand for `top`, `bottom`, `left` and `right` CSS properties. For eg: `inset: 10px` will be equivalent to `top, bottom, left, right: 10px` CSS properties.
 11. Using "DRY" approach, which is "DON'T REPEAT YOURSELF" method to not only increase the readability and maintainability of the code, but also to increase the performance, by performing less number of redundant/repetitive operations.
 
-These learnings contributed significantly to the robustness and user experience of the Password-Generator application.
+These learnings contributed significantly to the robustness and user experience of the Password-Generator application, as well as to my Software Development concepts.
 
 
 ## 📝 Prerequisites
