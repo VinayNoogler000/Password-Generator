@@ -56,66 +56,28 @@ window.addEventListener("DOMContentLoaded", () => {
         let includeNums = passOptionsEls.numbersCheckbox.checked;
         let includeSymbols = passOptionsEls.symbolsCheckbox.checked;
 
+        // Create an array of available character generator functions
+        const charGenerators = [
+            getRandomLowercaseAlphabet, // Always include lowercase
+        ];
+        
+        // Add optional character types based on user selection
+        if (includeUppercaseChars) charGenerators.push(getRandomUppercaseAlphabet);
+        if (includeNums) charGenerators.push(getRandomNumChar);
+        if (includeSymbols) charGenerators.push(getRandomSymbol);
+
         // Create an array to store random characters, then join them to form a password of user-desired length:  
         const password = [];
     
         // Loop to "password.length" times to add random lowercase, uppercase, numerical and symbolic characters to "password[]"
         for (let i = 0; i < passwordLength; i++) {
-            let typeOfChar = Math.round(Math.random()); // randomly decide the type of character to be added in the "password[]"
-           
-            if (includeUppercaseChars && includeNums && includeSymbols) {
-                typeOfChar = getRandomPositveInteger(4);
-                
-                if(typeOfChar === 1) {
-                    password.push( getRandomLowercaseAlphabet() );
-                }
-                else if(typeOfChar === 2) {
-                    password.push( getRandomUppercaseAlphabet() );
-                }
-                else if(typeOfChar === 3) {
-                    password.push( getRandomNumChar() );
-                }
-                else {
-                    password.push( getRandomSymbol() );
-                }
-            }
-            else if (includeUppercaseChars && includeNums) {
-                typeOfChar = getRandomPositveInteger(3);
-
-                password.push( typeOfChar === 1 ? getRandomLowercaseAlphabet() : 
-                typeOfChar === 2 ? getRandomUppercaseAlphabet() : getRandomNumChar() );
-            }
-            else if (includeUppercaseChars && includeSymbols ) {
-                typeOfChar = getRandomPositveInteger(3);
-
-                password.push( typeOfChar === 1 ? getRandomLowercaseAlphabet() : 
-                typeOfChar === 2 ? getRandomUppercaseAlphabet() : getRandomSymbol() );
-            }
-            else if (includeNums && includeSymbols ) {
-                typeOfChar = getRandomPositveInteger(3);
-
-                password.push( typeOfChar === 1 ? getRandomLowercaseAlphabet() : 
-                typeOfChar === 2 ? getRandomNumChar() : getRandomSymbol() );
-            }
-            else if ( includeUppercaseChars ) {
-                password.push( typeOfChar ? getRandomLowercaseAlphabet() : getRandomUppercaseAlphabet() );
-            }
-            else if (includeNums) {
-                password.push( typeOfChar ? getRandomLowercaseAlphabet() : getRandomNumChar() );
-            }
-            else if (includeSymbols){
-                password.push( typeOfChar ? getRandomLowercaseAlphabet() : getRandomSymbol() );
-            }
-            else {    
-                password.push( getRandomLowercaseAlphabet() );
-            }
+            let randomGeneratorIndex = getRandomPositveInteger(charGenerators.length) - 1;
+            const randomCharGenerator = charGenerators[randomGeneratorIndex];
+            password.push(randomCharGenerator());
         }
 
         // Display password on the webpage:
         passDisplayEl.value = password.join('');
-
-        // Allow user to copy the password:
-        canCopyPass = true;
     }
 
     // Function to copy the password to clipboard:
@@ -141,7 +103,12 @@ window.addEventListener("DOMContentLoaded", () => {
     passLengthInpEl.addEventListener("input", () => passLengthDisplayEl.textContent = passLengthInpEl.value);
 
     // Generate Password on clicking "genPassBtnEl":
-    genPassBtnEl.addEventListener("click", generatePassword);
+    genPassBtnEl.addEventListener("click", () => {
+        generatePassword();
+        
+        // Allow user to copy the password:
+        canCopyPass = true;
+    });
 
     // Copy the password the Clipboard on clicking "passDisplayEl":
     passDisplayEl.addEventListener("click", copyPasswordToClipboard);
