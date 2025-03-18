@@ -20,32 +20,27 @@ window.addEventListener("DOMContentLoaded", () => {
     let canCopyPass = false;  
 
     // Auxillary function to get a random lowercase alphabet, ranging a-z:
-    const getRandomLowercaseAlphabet = () => {
-        let i = Math.floor(Math.random() * LOWERCASE_ALPHABETS.length);
-        return LOWERCASE_ALPHABETS[i];
-    }
+    const getRandomLowercaseAlphabet = () => getRandomChar(LOWERCASE_ALPHABETS);
 
     // Auxillary function to get a random uppercase alphabet, ranging A-Z:
-    const getRandomUppercaseAlphabet = () => {
-        let i = Math.floor(Math.random() * UPPERCASE_ALPHABETS.length);
-        return UPPERCASE_ALPHABETS[i];
-    }
+    const getRandomUppercaseAlphabet = () => getRandomChar(UPPERCASE_ALPHABETS);
 
     // Auxillary function to get a random numerical character, ranging 0-9:
-    const getRandomNumChar = () => {
-        let i = Math.floor(Math.random() * NUMERICAL_CHARACTERS.length);
-        return NUMERICAL_CHARACTERS[i];
-    }
+    const getRandomNumChar = () => getRandomChar(NUMERICAL_CHARACTERS);
 
     // Auxillary function to get a random symbol:
-    const getRandomSymbol = () => {
-        let i = Math.floor(Math.random() * SYMBOL_CHARACTERS.length);
-        return SYMBOL_CHARACTERS[i];
-    }
+    const getRandomSymbol = () => getRandomChar(SYMBOL_CHARACTERS);
 
     // Auxillary function to generate a random positive integer, upto a given num:
     const getRandomPositveInteger = (maxNum) => {
         return Math.floor(Math.random() * maxNum) + 1;
+    }
+
+    // Auxillary function to get a random character from any array consisting of specific type of characters
+    const getRandomChar = (charArray) => {
+        const randomCharIndex = getRandomPositveInteger(charArray.length) - 1;
+        const randomChar = charArray[randomCharIndex];
+        return randomChar;
     }
 
     // Function to generate password:
