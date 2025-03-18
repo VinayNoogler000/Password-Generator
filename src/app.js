@@ -16,9 +16,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const NUMERICAL_CHARACTERS = '0123456789'.split('');
     const SYMBOL_CHARACTERS = '!@#$%^&*()_+-=?.'.split('');
 
-    // Create a tracker variable which can be used to allow (or not allow) user to copy password:
-    let canCopyPass = false;  
-
     // Auxillary function to get a random lowercase alphabet, ranging a-z:
     const getRandomLowercaseAlphabet = () => getRandomChar(LOWERCASE_ALPHABETS);
 
@@ -79,7 +76,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const copyPasswordToClipboard = async () => {
         let password = passDisplayEl.value;
 
-        if(!password || !canCopyPass) return;
+        if(!password) return;
 
         try {
             await navigator.clipboard.writeText(password);
@@ -100,12 +97,8 @@ window.addEventListener("DOMContentLoaded", () => {
     // Generate Password on clicking "genPassBtnEl":
     genPassBtnEl.addEventListener("click", () => {
         generatePassword();
-        
-        // Allow user to copy the password:
-        canCopyPass = true;
     });
 
     // Copy the password the Clipboard on clicking "passDisplayEl":
     passDisplayEl.addEventListener("click", copyPasswordToClipboard);
 });
-
