@@ -117,4 +117,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // Copy the password the Clipboard on clicking "passDisplayEl":
     passDisplayEl.addEventListener("click", copyPasswordToClipboard);
+
+    // Generate Password as the page loads:
+    passOptionsEls.uppercaseCheckbox.checked = true;
+    passOptionsEls.numbersCheckbox.checked = true;
+    passOptionsEls.symbolsCheckbox.checked = true;
+    generatePassword();
+    Toastify( new Toast("🎉Hurrah! Password Generated Sucessfully!🥳\nClick to Copy it!👇", "green") ).showToast();
 });
