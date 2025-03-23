@@ -20,6 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
     class Toast {
         constructor(message, bgColor) {
             this.text = message;
+            this.duration = 1800,
             this.position = "center",
             this.stopOnFocus = false,
             this.close = true,
