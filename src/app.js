@@ -22,6 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
             this.text = message;
             this.position = "center",
             this.stopOnFocus = false,
+            this.close = true,
             this.style = {
                 textAlign: "center",
                 background: bgColor === "green" ? "linear-gradient(to right, #00b09b, #96c93d)" : bgColor === "red" ? "linear-gradient(to right, #e33217, #ff001e)" : "linear-gradient(to right, #ADD8E6, #008080)",
