@@ -13,9 +13,9 @@
 A secure and customizable password generator web application that allows users to create strong passwords with various options including uppercase letters, numbers, and special characters. The app features an intuitive interface with real-time password generation.
 
 
-## 🎥 Demo
+## 🎥 Preview
 
-![Password Generator App](https://github.com/VinayNoogler000/Password-Generator/blob/main/assets/Demo.gif?raw=true)
+[![Password Generator App](https://github.com/VinayNoogler000/Password-Generator/blob/main/assets/Preview.png?raw=true)](https://password-generator-by-vt.b-cdn.net/)
 
 
 ## 🛠 Technologies Used
