@@ -15,7 +15,7 @@ A secure and customizable password generator web application that allows users t
 
 ## 🎥 Preview
 
-[![Password Generator App](https://github.com/VinayNoogler000/Password-Generator/blob/main/assets/Preview.png?raw=true)](https://password-generator-by-vt.b-cdn.net/)
+[![Password Generator App](https://github.com/VinayNoogler000/Password-Generator/blob/main/assets/Preview.png?raw=true)](https://password-generator-vt.vercel.app/)
 
 
 ## 🛠 Technologies Used
