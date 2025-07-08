@@ -4,8 +4,7 @@
 	"description": "A basic password generator app in which you can generate a random password of a specific length, in which you have the option to include uppercase, symbols, and/or numbers characters, with ad additional feature click-to-copy.",
 	"main": "app.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "npx tailwindcss -i ./src/input.css -o ./dist/style.css --watch"
+		"build-css": "npx tailwindcss -i ./src/input.css -o ./dist/style.css --watch"
 	},
 	"repository": {
 		"type": "git",
