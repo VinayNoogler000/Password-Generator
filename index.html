@@ -5,10 +5,12 @@
 	<meta charset="UTF-8" />
 	<meta name="author" content="Vinay Tambey" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" href="/assets/lock-favicon.png" type="image/x-icon" />
+	<link rel="icon" href="./assets/lock-favicon.png" type="image/x-icon" />
 	<title>Password Generator App</title>
-	<link rel="stylesheet" href="/dist/style.css" />
+	<link rel="stylesheet" href="./dist/style.css" />
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+	<script src="./src/app.js" defer></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
 </head>
 
 <body class="h-screen bg-zinc-900 flex-row-center">
@@ -51,9 +53,6 @@
 
 		<button id="gen-pass-btn" class="w-full bg-(--color-primary) p-4 cursor-pointer text-3xl absolute bottom-0 opacity-90 smooth-transition hover:hover-effects">Generate Password</button>
 	</main>
-
-	<script src="./app.js" type="module"></script>
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 
 </html>
